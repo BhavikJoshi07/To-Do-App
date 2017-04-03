@@ -1,6 +1,7 @@
 var express = require('express');
 var todoControllers = require('./controllers/todoControllers');
 
+const port = process.env.PORT || 3000;
 var app = express();
 
 //Set Up Template Engine
@@ -13,6 +14,6 @@ app.use(express.static('./public'));
 todoControllers(app);
 
 //Listen
-app.listen(3000, () => {
-    console.log("Server Up! Listening on port 3000.");
+app.listen(port, () => {
+    console.log(`Server Up! Listening on port ${port}`);
 });
